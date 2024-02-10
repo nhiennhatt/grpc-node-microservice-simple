@@ -1,0 +1,36 @@
+{
+  "name": "grpc-node-microservice-simple",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "rimraf ./dist&tsc",
+    "start-article-service": "set TS_NODE_BASEURL=./dist& node -r tsconfig-paths/register ./dist/articleService/index.js",
+    "start-gateway": "set TS_NODE_BASEURL=./dist& node -r tsconfig-paths/register ./dist/gateway/index.js",
+    "dev-article-service": "nodemon src/articleService/index.ts",
+    "dev-gateway": "nodemon src/gateway/index.ts"
+  },
+  "devDependencies": {
+    "@types/express": "4.17.21",
+    "@types/google-protobuf": "^3.15.12",
+    "@types/node": "^20.11.16",
+    "grpc-tools": "^1.12.4",
+    "grpc_tools_node_protoc_ts": "^5.3.3",
+    "nodemon": "^3.0.3",
+    "protoc-gen-js": "^3.21.2",
+    "ts-node": "^10.9.2",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "@grpc/grpc-js": "^1.10.0",
+    "body-parser": "^1.20.2",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.14.1",
+    "dotenv": "^16.4.1",
+    "express": "^4.18.2",
+    "google-protobuf": "^3.21.2",
+    "mongoose": "^8.1.1",
+    "reflect-metadata": "^0.2.1"
+  }
+}

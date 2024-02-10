@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "target": "es2016",
+    "lib": [
+      "ESNext"
+    ],
+    "module": "NodeNext",
+    "rootDir": "./src",
+    "moduleResolution": "NodeNext",
+    "baseUrl": "./src",
+    "allowJs": true,
+    "outDir": "./dist",
+    "removeComments": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strictPropertyInitialization": false,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "paths": {
+      "@gateway/*": ["gateway/*"],
+      "@article-service/*": ["articleService/*"],
+      "@grpc/*": ["grpc/*"],
+    }
+  }
+}

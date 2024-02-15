@@ -9,7 +9,7 @@ const server = new grpcJs.Server();
 
 server.addService(ArticleServiceService, service);
 
-server.bindAsync("localhost:50051", grpcJs.ServerCredentials.createInsecure(), (error, port) => {
+server.bindAsync(`0.0.0.0:${process.env.ARTICLE_SERVICE_PORT}`, grpcJs.ServerCredentials.createInsecure(), (error, port) => {
   if (error) throw error;
   console.log(`Server is running at port ${port}`);
 })

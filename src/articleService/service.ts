@@ -1,4 +1,4 @@
-import { IArticleServiceServer } from "../grpc/article";
+import { IArticleServiceServer } from "@grpc/article";
 import { getAllArticles } from "./handler/getAllArticles";
 import { addArticle } from "./handler/addArticle";
 

@@ -1,0 +1,36 @@
+services:
+  database:
+    image: mongo:jammy
+    restart: always
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=${MONGO_USERNAME}
+      - MONGO_INITDB_ROOT_PASSWORD=${MONGO_PASSWORD}
+
+  articleservice:
+    build:
+      context: .
+    command:
+      - yarn
+      - start-article-service
+    environment:
+      - MONGO_URI=mongodb://database:27017
+      - MONGO_USERNAME=${MONGO_USERNAME}
+      - MONGO_PASSWORD=${MONGO_PASSWORD}
+      - ARTICLE_SERVICE_PORT=${ARTICLE_SERVICE_PORT}
+    depends_on:
+      - database
+
+  gateway:
+    build:
+      context: .
+    command:
+      - yarn
+      - start-gateway
+    environment:
+      - ARTICLE_SERVICE_PORT=${ARTICLE_SERVICE_PORT}
+      - ARTICLE_SERVICE_HOST=articleservice
+      - GATEWAY_PORT=${GATEWAY_PORT}
+    ports:
+      - ${GATEWAY_PORT}:${GATEWAY_PORT}
+    depends_on:
+      - articleservice

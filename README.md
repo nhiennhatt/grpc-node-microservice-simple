@@ -1,4 +1,4 @@
-# GRPC - NodeJS microservice simple
+# gRPC - NodeJS microservice simple
 
 ## Introduction
 
@@ -7,13 +7,13 @@ It is a simple project that implements a microservice architecture. It includes 
 - Gateway API:
     - NodeJS - ExpressJS
     - RestAPI
-    - GRPC
+    - gRPC
 - Service:
     - NodeJS
-    - GRPC
+    - gRPC
 - MongoDB
 
-### GRPC / Protocol Buffers tools:
+### gRPC / Protocol Buffers tools:
 
 - protoc: protocol buffers compiler ([github](https://github.com/protocolbuffers/protobuf))
 - protoc-gen-js (`js_out` plugin - [npm](https://www.npmjs.com/package/protoc-gen-js))

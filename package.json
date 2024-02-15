@@ -5,8 +5,8 @@
   "license": "MIT",
   "scripts": {
     "build": "rimraf ./dist&tsc",
-    "start-article-service": "set TS_NODE_BASEURL=./dist& node -r tsconfig-paths/register ./dist/articleService/index.js",
-    "start-gateway": "set TS_NODE_BASEURL=./dist& node -r tsconfig-paths/register ./dist/gateway/index.js",
+    "start-article-service": "TS_NODE_BASEURL=./dist node -r tsconfig-paths/register ./dist/articleService/index.js",
+    "start-gateway": "TS_NODE_BASEURL=./dist node -r tsconfig-paths/register ./dist/gateway/index.js",
     "dev-article-service": "nodemon src/articleService/index.ts",
     "dev-gateway": "nodemon src/gateway/index.ts"
   },

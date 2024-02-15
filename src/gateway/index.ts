@@ -4,7 +4,7 @@ import express from "express";
 import { json } from "body-parser";
 import rootRouter from "./router";
 
-const port = Number(process.env.PORT) || 3000;
+const port = Number(process.env.GATEWAY_PORT) || 3000;
 const app = express();
 
 app.use(json());
